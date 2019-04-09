@@ -1,0 +1,8 @@
+{
+  "name": "wardrobe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/PlusLius/wardrobe.git",
+  "author": "pluslius <408709581@qq.com>",
+  "license": "MIT"
+}
