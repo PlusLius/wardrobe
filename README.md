@@ -146,6 +146,13 @@ module.exports = {
         test:/\.js|jsx$/,
         loader:'babel-loader',
         exclude:'/node_modules/'
+      },
+       {
+        test:/\.css$/,
+        loader:[
+          'style-loader', //将css文件加入到html中
+          'css-loader' //将css字符串转换成css文件
+        ]
       }
     ]
   },
