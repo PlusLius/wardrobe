@@ -4,5 +4,21 @@
   "main": "index.js",
   "repository": "https://github.com/PlusLius/wardrobe.git",
   "author": "pluslius <408709581@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server --mode development --config ./build/webpack.config.js --open"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.0"
+  }
 }
