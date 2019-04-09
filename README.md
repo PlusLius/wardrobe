@@ -104,3 +104,58 @@ module.exports = {
 }
 
 ```
+
+## React环境搭建
+
+```
+使用@babel7 + webpack4
+
+//.babelrc
+{
+  "presets":[
+    "@babel/preset-env", //可以根据配置的目标浏览器或者运行环境来自动将ES2015+的代码转换为es5。
+    "@babel/preset-react" //用来转换jsx语法
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime" //让js支持es6API
+  ]
+}
+
+```
+
+```js
+module.exports = {
+  devtool:'source-map',
+  resolve:{
+    extensions:[
+      '.js',
+      '.json',
+      '.jsx'
+    ]
+  },
+  entry:{
+    app:'./src/app.js'
+  },
+  output:{
+    filename:'bundle.js',
+    path:path.join(__dirname,'dist')
+  },
+  module:{
+    rules:[ //将js或jsx文件中的代码块转换成符合规定的代码,会调用.babelrc里面的配置文件,根据里面的配置进行转换
+      {
+        test:/\.js|jsx$/,
+        loader:'babel-loader',
+        exclude:'/node_modules/'
+      }
+    ]
+  },
+  plugins:[
+    new HtmlWebPackPlugin({
+      template : path.join(__dirname,"../src/index.html"),
+      filename:"index.html"
+    })
+  ]
+}
+
+
+```
