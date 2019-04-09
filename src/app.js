@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import './app.css'
+import './app.less'
+
 
 const App = () => <div> PLUS!</div>
 
