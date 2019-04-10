@@ -9,4 +9,4 @@ brancher:
 install:
   - "npm install"
 script:
-  - "npm run build"
+

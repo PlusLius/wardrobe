@@ -1,5 +1,7 @@
 ## .editorconfig
 
+[![Build Status](https://www.travis-ci.org/PlusLius/wardrobe.svg?branch=master)](https://www.travis-ci.org/PlusLius/wardrobe)
+
 > 让不同的编辑器保持同样的代码风格
 
 ### 属性
@@ -156,6 +158,7 @@ fetch('some-url')
 module.exports = {
   devtool:'source-map',
   devServer:{ //配置静态资源文件的打包路径
+    hot:true,//开启热更新
     contentBase:path.join(__dirname,'../src'),
     compress:true, //开启gzip压缩
     port:8080 //指定端口
@@ -233,9 +236,21 @@ module.exports = {
     new HtmlWebPackPlugin({
       template : path.join(__dirname,"../src/index.html"),
       filename:"index.html"
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin(),//开启热更新
+    new webpack.NamedModulesPlugin()//开启热更新
   ]
 }
 
 
+```
+
+## 模块热更新
+
+```js
+if(module.hot){
+  module.hot.accept('./component',function(){
+
+  })
+}
 ```

@@ -1,11 +1,13 @@
 const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const CleanWebPackPlugin = require('clean-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   mode:'development',
   devtool:'source-map',
   devServer:{
+    hot:true,
     contentBase:path.join(__dirname,'../src'),
     compress:true,
     port:8080,
@@ -68,6 +70,8 @@ module.exports = {
     new HtmlWebPackPlugin({
       template : path.join(__dirname,"../src/index.html"),
       filename:"index.html"
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
   ]
 }
