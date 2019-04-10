@@ -299,3 +299,58 @@ import icon from '@/assets/images/icon/add-icon'
 或者
 reequire('@/assets/images/icon/add-icon')
 ```
+
+## 添加postcss插件
+
+```js
+//添加css兼容代码插件
+module.exports = {
+  plugins: [
+    require('autoprefixer')
+  ]
+}
+//指定添加兼容css代码的范围
+"browserslist":[
+    ">= 1%",
+    "last 2 versions"
+]
+```
+
+## postcss插件进行移动端适配
+
+```
+1.postcss-importpostcss-import主要功有是解决@import引入路径问题。使用这个插件，可以让你很轻易的使用本地文件、node_modules或者web_modules的文件。这个插件配合postcss-url让你引入文件变得更轻松。
+
+
+2.postcss-url该插件主要用来处理文件，比如图片文件、字体文件等引用路径的处理。
+
+
+3.cssnano 主要用来压缩和清理CSS代码
+
+4.postcss-px-to-viewport 插件主要用来把px单位转换为vw、vh、vmin或者vmax这样的视窗单位，也是vw适配方案的核心插件之一。
+
+5.postcss-aspect-ratio-mini主要用来处理元素容器宽高比。在实际使用的时候，具有一个默认的结构
+
+6.postcss-write-svg 插件主要用来处理移动端1px的解决方案。该插件主要使用的是border-image和background来做1px的相关处理。
+```
+```js
+module.exports = {
+  plugins: [
+    require('postcss-css-reset'),//重置css样式
+    require('autoprefixer'),
+    require('postcss-import'),
+    require('postcss-url'),
+    require('postcss-px-to-viewport')({
+      viewportWidth: 750,// 视窗的宽度，对应的是我们设计稿的宽度，一般是750
+      viewportHeight: 1334,// 视窗的高度，根据750设备的宽度来指定，一般指定1334，也可以不配置著作权归作者所有。
+      unitPrecision: 3,// 指定`px`转换为视窗单位值的小数位数（很多时候无法整除）著作权归作者所有。
+      viewportUnit: 'vw',// 指定需要转换成的视窗单位，建议使用vw
+      selectorBlackList: ['.ignore', '.hairlines'],//// 指定不转换为视窗单位的类，可以自定义，可以无限添加,建议定义一至两个通用的类名著作权归作者所有。
+      minPixelValue: 1,// 小于或等于`1px`不转换为视窗单位，你也可以设置为你想要的值著作权归作者所有。
+      mediaQuery: false,// 允许在媒体查询中转换`px`
+      exclude: /(\/|\\)(node_modules)(\/|\\)/
+    }),
+    require('postcss-css-reset'), //重置样式
+  ]
+}
+```

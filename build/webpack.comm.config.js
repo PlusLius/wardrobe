@@ -19,10 +19,12 @@ const generateConfig = env => {
   const styleLoader = env === 'production' ? [
     'style-loader',
     'css-loader',
+    'postcss-loader',
     'less-loader'
   ] : [
     'style-loader',
     'css-loader',
+    'postcss-loader',
     'less-loader'
   ]
 
@@ -57,16 +59,28 @@ const generateConfig = env => {
           exclude:'/node_modules/'
         },
         {
+          test:/\.css$/,
+          loader:[
+            'style-loader',
+            'css-loader',
+            'postcss-loader'
+          ],
+          exclude:'/node_modules/'
+        },
+        {
           test:/\.less$/,
-          loader:styleLoader
+          loader:styleLoader,
+          exclude:'/node_modules/'
         },
         {
           test:/\.(jpg|png|svg)$/,
-          loader:'file-loader'
+          loader:'file-loader',
+          exclude:'/node_modules/'
         },
         {
           test:/\.(eot|woff2?|ttf|svg)$/,
-          loader:'file-loader'
+          loader:'file-loader',
+          exclude:'/node_modules/'
         }
       ]
     },

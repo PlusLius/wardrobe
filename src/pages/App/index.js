@@ -13,8 +13,10 @@ class App extends Component {
       <div>
           PLUS!
           <img src={icon} alt=""/>
-          <span class="fa fa-folder"></span>
+          <span className="fa fa-folder"></span>
           PLUS!
+          <h1>111</h1>
+          <div className="test">haha</div>
       </div>
     )
   }
