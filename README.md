@@ -254,3 +254,27 @@ if(module.hot){
   })
 }
 ```
+
+## 添加eslint
+
+```js
+'parserOptions': { //解析参数
+    'ecmaVersion': 6,
+    "sourceType":"module",
+    "ecmaFeatures":{
+      "jsx":true,
+      "experimentalObjectRestSpread":true,
+      "modules":true
+    }
+},
+
+test:/\.(js|jsx)$/,
+  use:[
+    {
+      loader:'babel-loader'
+    },
+    {
+      loader:'eslint-loader'
+    }
+  ],
+```

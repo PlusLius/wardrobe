@@ -10,13 +10,18 @@ module.exports = {
         'SharedArrayBuffer': 'readonly'
     },
     'parserOptions': { //解析参数
-        'ecmaVersion': 2018
+        'ecmaVersion': 6,
+        "sourceType":"module",
+        "ecmaFeatures":{
+          "jsx":true,
+          "experimentalObjectRestSpread":true,
+          "modules":true
+        }
     },
     'rules': { //设置规则
-        'indent': [//缩进
-            'error',
-            4
-        ],
+        "no-unused-vars":'off',
+        'no-console':'off',
+        'indent': 'off',
         'linebreak-style': [ //换行符
             'error',
             'unix'

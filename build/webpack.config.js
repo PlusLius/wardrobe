@@ -7,6 +7,7 @@ module.exports = {
   mode:'development',
   devtool:'source-map',
   devServer:{
+    overlay:true, //开启错误提示
     hot:true,
     contentBase:path.join(__dirname,'../src'),
     compress:true,
@@ -41,7 +42,14 @@ module.exports = {
     rules:[
       {
         test:/\.(js|jsx)$/,
-        loader:'babel-loader',
+        use:[
+          {
+            loader:'babel-loader'
+          },
+          {
+            loader:'eslint-loader'
+          }
+        ],
         exclude:'/node_modules/'
       },
       {
