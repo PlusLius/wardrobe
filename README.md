@@ -278,3 +278,13 @@ test:/\.(js|jsx)$/,
     }
   ],
 ```
+
+## 区分生产环境和开发环境
+
+```js
+//根据环境变量来区分生产环境和开发环境，利用merge合并基础配置
+module.exports = env => {
+  let config = env === 'production' ? productionConfig : developmentConfig
+  return merge(generateConfig(env),config)
+}
+```
