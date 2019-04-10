@@ -1,10 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import App from './App'
 
 import './app.less'
-
-
-const App = () => <div> PLUS!</div>
 
 ReactDOM.render(
   <App/>

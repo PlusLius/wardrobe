@@ -117,7 +117,7 @@ module.exports = {
     "@babel/preset-react" //用来转换jsx语法
   ],
   "plugins": [
-    "@babel/plugin-transform-runtime" //让js支持es6API
+    "@babel/plugin-transform-runtime" //让js支持es6API,安装这个的同时也要安装@bebel/runtime，才能进行转换
   ]
 }
 
@@ -126,6 +126,24 @@ module.exports = {
 ```js
 module.exports = {
   devtool:'source-map',
+  devServer:{ //配置静态资源文件的打包路径
+    contentBase:path.join(__dirname,'../src'),
+    compress:true, //开启gzip压缩
+    port:8080 //指定端口
+    historyApiFallback:true //指定history模式找不到页面时的跳转路径
+    historyApiFallback:{ //写法
+      rewrites:[ //重定向
+        {
+          from:'xxx/xxx'//url
+          from :/^\/([a-zA-Z0-9]+\/?)([a-zA-Z0-9])/,
+          to:''//重定向url
+          to:function(context){
+            return '/' + context.match[1] + context.match[2]
+          }
+        }
+      ]
+    }
+  },
   resolve:{
     extensions:[
       '.js',
@@ -161,10 +179,15 @@ module.exports = {
           'css-loader', //将css字符串转换成css文件
           'less-loader' //先将less文件转换成css字符串
         ]
+      },
+      {
+        test:/\.(jpg|png|svg)$/, //处理图片文件
+        loader:'file-loader'
       }
     ]
   },
   plugins:[
+    new CleanWebPackPlugin(),//清除dist目录下的文件
     new HtmlWebPackPlugin({
       template : path.join(__dirname,"../src/index.html"),
       filename:"index.html"

@@ -653,6 +653,13 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
+"@babel/runtime@^7.4.3":
+  version "7.4.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.3.tgz#79888e452034223ad9609187a0ad1fe0d2ad4bdc"
+  integrity sha512-9lsJwJLxDh/T3Q3SZszfWOTkk3pHbkmH+3KY+zwIDmsNlxsumuhS2TH3NIpktU4kNvfzy+k3eLT7aTJSPTo0OA==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/template@^7.1.0", "@babel/template@^7.2.2", "@babel/template@^7.4.0":
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.4.0.tgz#12474e9c077bae585c5d835a95c0b0b790c25c8b"
@@ -1400,6 +1407,13 @@ clean-css@4.2.x:
   dependencies:
     source-map "~0.6.0"
 
+clean-webpack-plugin@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/clean-webpack-plugin/-/clean-webpack-plugin-2.0.1.tgz#2241526b0030aa0249e78714471298f867fc2829"
+  integrity sha512-vway5pXGVd91bicwjaf8j188Al6VMf9R9Ekl6q0qeiaWStRsOOXuh4qtjX1UrUvmz5XevQVCdjBuzr4Tzsnpog==
+  dependencies:
+    del "^4.0.0"
+
 cliui@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-4.1.0.tgz#348422dbe82d800b3022eef4f6ac10bf2e4d1b49"
@@ -1788,7 +1802,7 @@ define-property@^2.0.2:
     is-descriptor "^1.0.2"
     isobject "^3.0.1"
 
-del@^4.1.0:
+del@^4.0.0, del@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/del/-/del-4.1.0.tgz#049543b8290e1a9293e2bd150ab3a06f637322b8"
   integrity sha512-C4kvKNlYrwXhKxz97BuohF8YoGgQ23Xm9lvoHmgT7JaPGprSEjk3+XFled74Yt/x0ZABUHg2D67covzAPUKx5Q==
@@ -2226,6 +2240,14 @@ figgy-pudding@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
   integrity sha512-vNKxJHTEKNThjfrdJwHc7brvM6eVevuO5nTj6ez8ZQ1qbXTvGthucRF7S4vf2cr71QVnT70V34v0S1DyQsti0w==
+
+file-loader@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-3.0.1.tgz#f8e0ba0b599918b51adfe45d66d1e771ad560faa"
+  integrity sha512-4sNIOXgtH/9WZq4NvlfU3Opn5ynUsqBwSLyM+I7UOwdGigTBYfVVQEwe/msZNX/j4pCJTIM14Fsw66Svo1oVrw==
+  dependencies:
+    loader-utils "^1.0.2"
+    schema-utils "^1.0.0"
 
 fill-range@^4.0.0:
   version "4.0.0"
@@ -4248,6 +4270,11 @@ regenerate@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
   integrity sha512-1G6jJVDWrt0rK99kBjvEtziZNCICAuvIPkSiUFIQxVP06RCVpq3dmDo2oi6ABpYaDYaTRr67BEhL8r1wgEZZKg==
+
+regenerator-runtime@^0.13.2:
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.2.tgz#32e59c9a6fb9b1a4aff09b4930ca2d4477343447"
+  integrity sha512-S/TQAZJO+D3m9xeN1WTI8dLKBBiRgXBlTJvbWjCThHWZj9EvHK70Ff50/tYj2J/fvBY6JtFVwRuazHN2E7M9BA==
 
 regenerator-transform@^0.13.4:
   version "0.13.4"
