@@ -288,3 +288,14 @@ module.exports = env => {
   return merge(generateConfig(env),config)
 }
 ```
+
+## 资源引用问题
+
+```js
+//css中
+url('~@/assets/images/add-icon.png')
+//js中
+import icon from '@/assets/images/icon/add-icon'
+或者
+reequire('@/assets/images/icon/add-icon')
+```

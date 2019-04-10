@@ -22,10 +22,7 @@ module.exports = {
         "no-unused-vars":'off',
         'no-console':'off',
         'indent': 'off',
-        'linebreak-style': [ //换行符
-            'error',
-            'unix'
-        ],
+        'linebreak-style':'off',
         'quotes': [ //引号
             'error',
             'single'

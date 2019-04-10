@@ -1,8 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
-
-import './app.less'
+import App from './pages/App'
 
 ReactDOM.render(
   <App/>

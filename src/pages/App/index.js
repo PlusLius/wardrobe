@@ -1,4 +1,6 @@
 import React,{Component} from 'react'
+import './app.less'
+import icon from '@/assets/images/icon/add-icon'
 
 class App extends Component {
   componentWillMount(){
@@ -10,7 +12,8 @@ class App extends Component {
     return (
       <div>
           PLUS!
-          <img src="/add-icon.png" alt=""/>
+          <img src={icon} alt=""/>
+          <span class="fa fa-folder"></span>
           PLUS!
       </div>
     )

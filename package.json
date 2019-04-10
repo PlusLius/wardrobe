@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --env development --config ./build/webpack.comm.config.js --open",
-    "build":"webpack --env production  --config ./build/webpack.comm.config.js "
+    "build": "webpack --env production  --config ./build/webpack.comm.config.js "
   },
   "dependencies": {
     "@babel/core": "^7.4.3",

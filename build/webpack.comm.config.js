@@ -6,6 +6,8 @@ const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 const generateConfig = env => {
 
+  const resolve = (src) => path.join(__dirname,src)
+
   const scriptLoader = [
     {
       loader:'babel-loader'
@@ -32,15 +34,20 @@ const generateConfig = env => {
       extensions:[
         '.js',
         '.jsx',
-        '.json'
-      ]
+        '.json',
+        '.png',
+        '.svg'
+      ],
+      alias:{
+         "@":resolve('../src')
+      }
     },
     entry:{
       app:'./src/index.js'
     },
     output:{
       filename:'bundle.js',
-      path:path.join(__dirname,'../dist')
+      path:resolve('../dist')
     },
     module:{
       rules:[
@@ -56,12 +63,16 @@ const generateConfig = env => {
         {
           test:/\.(jpg|png|svg)$/,
           loader:'file-loader'
+        },
+        {
+          test:/\.(eot|woff2?|ttf|svg)$/,
+          loader:'file-loader'
         }
       ]
     },
     plugins:[
       new HtmlWebPackPlugin({
-        template : path.join(__dirname,"../src/index.html"),
+        template : resolve('../src/index.html'),
         filename:"index.html"
       })
     ]
