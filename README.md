@@ -336,7 +336,6 @@ module.exports = {
 ```js
 module.exports = {
   plugins: [
-    require('postcss-css-reset'),//重置css样式
     require('autoprefixer'),
     require('postcss-import'),
     require('postcss-url'),
