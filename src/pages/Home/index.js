@@ -1,18 +1,16 @@
 import React,{Component} from 'react'
 import {connect} from 'dva'
-
+import styles from './home'
 
 @connect(
   state => state.home
 )
 class Home extends Component {
   render(){
-    console.log(this.props.number)
     return (
-      <div>Hello Home
-           <p>{this.props.number}</p>
-           <button onClick={()=>this.props.dispatch({type:'home/add'})}>+</button>
-           <button onClick={()=>this.props.dispatch({type:'home/asyncAdd'})}>异步+</button>
+      <div className={styles.homePage}>
+
+        <div className={styles.recommend}>为你推荐</div>
       </div>
     )
   }

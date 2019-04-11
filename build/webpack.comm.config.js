@@ -50,7 +50,9 @@ const generateConfig = env => {
         '.jsx',
         '.json',
         '.png',
-        '.svg'
+        '.svg',
+        '.less',
+        '.scss'
       ],
       alias:{
          "@":resolve('../src')

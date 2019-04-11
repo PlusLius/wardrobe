@@ -6,7 +6,7 @@
   "author": "pluslius <408709581@qq.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --env development --config ./build/webpack.comm.config.js --open",
+    "dev": "webpack-dev-server --env development --config ./build/webpack.comm.config.js",
     "build": "webpack --env production  --config ./build/webpack.comm.config.js ",
     "fix": "eslint --fix .",
     "test": "jest --coverage"

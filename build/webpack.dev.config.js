@@ -3,6 +3,7 @@ const webpack = require('webpack')
 
 module.exports = {
   devServer:{
+    open:true,
     overlay:true, //开启错误提示
     hot:true,
     contentBase:path.join(__dirname,'../src'),
