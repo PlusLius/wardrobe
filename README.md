@@ -494,3 +494,35 @@ export default function request(url,options){
 
 
 ```
+
+## 目录设计
+
+```js
+├── assets //用于存放图片和文字
+│   ├── fonts
+│   └── images
+│       ├── icon
+│       ├── tab
+│       └── user
+├── index.html
+├── index.js
+├── models //用于管理所以子组件内的models,管理reducer
+│   └── index.js
+├── pages //用于开发组件
+│   ├── App
+│   │   ├── app.less
+│   │   ├── index.js
+│   │   └── test.less
+│   └── Home
+│       ├── index.js
+│       └── modle.js
+├── reset-mobile.css
+├── router.js
+├── routes //用于存放路由组件
+│   ├── App.js
+│   └── Home.js
+├── services //用于存放接口类
+│   └── index.js
+└── utils //用于存放工具类
+    └── request.js
+```
