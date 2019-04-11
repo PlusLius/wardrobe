@@ -1,7 +1,7 @@
 import React,{Fragment} from 'react'
 import {Route,Router} from 'dva/router'
-import App from '@/routes/App'
-import Home from '@/routes/Home'
+import App from '@/pages/App'
+import Home from '@/pages/Home'
 
 function RouterConfig({history}){
   return (

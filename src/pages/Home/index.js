@@ -1,7 +1,11 @@
 import React,{Component} from 'react'
+import {connect} from 'dva'
 
+
+@connect(
+  state => state.home
+)
 class Home extends Component {
-
   render(){
     console.log(this.props.number)
     return (

@@ -4,6 +4,7 @@ module.exports = {
         'commonjs': true,
         'es6': true
     },
+    'parser': 'babel-eslint',
     'extends': 'eslint:recommended',//使用最佳实践
     'globals': { //全局变量
         'Atomics': 'readonly',

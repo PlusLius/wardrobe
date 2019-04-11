@@ -526,3 +526,39 @@ export default function request(url,options){
 └── utils //用于存放工具类
     └── request.js
 ```
+
+## 优化
+
+### 使用装饰器语法eslint报错
+
+```js
+// 对Babel解析器的包装使其与 ESLint 兼容。
+parser: 'babel-eslint',
+```
+
+```js
+//添加装饰器转换
+ "plugins": [
+    "@babel/plugin-transform-runtime",
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ]
+],
+
+//使用,routes直接写组件里面
+@connect(
+  state => state.home
+)
+class Home extends Component {
+  render(){
+    ...
+  }
+}
+
+export default Home
+```
+
+

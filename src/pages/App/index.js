@@ -3,6 +3,7 @@ import './app.less'
 import icon from '@/assets/images/icon/add-icon.png'
 import {query} from '@/services'
 
+
 class App extends Component {
   componentWillMount(){
     query({
