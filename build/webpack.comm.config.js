@@ -18,12 +18,24 @@ const generateConfig = env => {
 
   const styleLoader = env === 'production' ? [
     'style-loader',
-    'css-loader',
+    {
+      loader:'css-loader',
+      options:{
+        modules: true,
+        localIdentName: '[name]__[local]__[hash:base64:5]'
+      }
+    },
     'postcss-loader',
     'less-loader'
   ] : [
     'style-loader',
-    'css-loader',
+    {
+      loader:'css-loader',
+      options:{
+        modules: true,
+        localIdentName: '[name]__[local]__[hash:base64:5]'
+      }
+    },
     'postcss-loader',
     'less-loader'
   ]

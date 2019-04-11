@@ -393,3 +393,67 @@ describe('UI 测试',() => {
   })
 })
 ```
+
+## 添加css模块化
+
+```js
+  {
+    loader:'css-loader',
+    options:{
+      modules: true,
+      localIdentName: '[name]__[local]__[hash:base64:5]'
+    }
+  },
+```
+
+## 引入dva简化开发
+
+```js
+import dva from 'dva'
+import router from './router'
+import models from './models'
+
+const app = dva()
+
+//将各个组件中的action,reducer,整合到一起
+odels.forEach(model => app.model(model))
+//将router整合到一起
+app.router(router)
+//将挂载根组件整合到一起
+app.start('#root')
+
+
+//router通过connect来接收reducer的状态
+export default connect(state => state.home)(Home)
+
+
+function delay(ms) {
+  return new Promise((resolve,reject) => {
+      setTimeout(function () {
+          resolve()
+      },ms)
+  })
+}
+
+//定义组件内部的状态
+export default {
+  namespace:'home',
+  state:{
+    number:0
+  },
+  effects:{//处理异步的action
+    *asyncAdd(action,{call,put}){
+      yield call(delay,1000)
+      yield put({type:'add'})
+    }
+  },
+  reducers:{//reducer处理action传过来的参数
+    add(state){
+      return {
+        number:state.number + 1
+      }
+    }
+  }
+}
+
+```

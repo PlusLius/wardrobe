@@ -44,6 +44,7 @@
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
+    "dva": "^2.4.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^5.16.0",
