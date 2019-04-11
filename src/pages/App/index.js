@@ -1,16 +1,15 @@
 import React,{Component} from 'react'
 import './app.less'
-import icon from '@/assets/images/icon/add-icon'
+import icon from '@/assets/images/icon/add-icon.png'
+import fetch from '../../utils/fetch'
 
 class App extends Component {
   componentWillMount(){
-    fetch('/comments/show?id=41935867588333502&page=1').then(data => data.json()).then(data => {
-      console.log(data)
-    })
+    fetch()
   }
   render(){
     return (
-      <div>
+      <div className="App">
           PLUS!
           <img src={icon} alt=""/>
           <span className="fa fa-folder"></span>

@@ -353,3 +353,43 @@ module.exports = {
   ]
 }
 ```
+
+## 添加UI测试
+
+```json
+"jest": {
+    "setupFiles": [//执行配置文件
+      "<rootDir>/test/__test__/setup.js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ],
+    "moduleNameMapper": { //忽略css,图片文件
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js"
+    },
+    "testPathIgnorePatterns": [ //忽略其他无关目录
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/",
+      "<rootDir>/build/"
+    ]
+  },
+```
+
+```js
+//测试组件文件是否展示正常
+describe('UI 测试',() => {
+  it('test should equlas hah',() => {
+      const wrapper = mount(<App/>)
+      const content = wrapper.find('.test')
+      expect(content).toHaveLength(1)
+      expect(content.text()).toBe('haha')
+  })
+})
+```
