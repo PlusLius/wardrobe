@@ -27,9 +27,6 @@ module.exports = {
             'error',
             'single'
         ],
-        'semi': [ //分号
-            'error',
-            'never'
-        ]
+        'semi': 'off'
     }
 }

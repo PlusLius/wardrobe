@@ -1,11 +1,14 @@
 import React,{Component} from 'react'
 import './app.less'
 import icon from '@/assets/images/icon/add-icon.png'
-import fetch from '../../utils/fetch'
+import {query} from '@/services'
 
 class App extends Component {
   componentWillMount(){
-    fetch()
+    query({
+      id:'41935867588333502',
+      page:1
+    }).then(data => console.log(data))
   }
   render(){
     return (
